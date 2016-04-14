@@ -1,11 +1,18 @@
-# glob-loader
+# @eagle/glob-loader
+
 webpack loader to load files at once with glob
 
 ## Install
 
 ```
-npm install --save-dev glob-loader
+npm install --save-dev @eagle/glob-loader
 ```
+
+## Repository
+
+Change: export object instead of an array
+
+https://github.com/Graf009/glob-loader.git
 
 ## Use
 
