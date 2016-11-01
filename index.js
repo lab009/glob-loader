@@ -1,21 +1,26 @@
 "use strict";
 
-var loaderUtils = require("loader-utils");
 var glob = require("glob");
 var path = require("path");
 
 module.exports = function (content, sourceMap) {
-  this.cacheable();
-
+  this.cacheable && this.cacheable();
   var resourceDir = path.dirname(this.resourcePath);
-  var files = glob.sync(content.trim(), {
+  var pattern = content.trim();
+  var files = glob.sync(pattern, {
     cwd: resourceDir
   });
 
-  return "module.exports = {\n" + files.map(function (file) {
-    var name = path.basename(file, path.extname(file));
-    this.addDependency(file);
+  if (!files.length) {
+    this.emitWarning('Did not find anything for glob "' + pattern + '" in directory "' + resourceDir + '"');
+  }
 
-    return "  '" + name + "': require(" + JSON.stringify(file) + ")"
+  return "module.exports = {\n" + files.map(function (file) {
+    this.addDependency(path.resolve(resourceDir, file));
+
+    var fileName = path.basename(file, path.extname(file));
+    var stringifiedFileName = JSON.stringify(fileName);
+    var stringifiedFile = JSON.stringify(file);
+    return "  " + stringifiedFileName + ": require(" + stringifiedFile + ")";
   }, this).join(",\n") + "\n};";
 };
