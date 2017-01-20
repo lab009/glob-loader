@@ -30,7 +30,7 @@
   ],
   "devDependencies": {
     "glob": "7.1.1",
-    "tap": "8.0.0",
-    "webpack": "1.13.3"
+    "tap": "9.0.3",
+    "webpack": "1.14.0"
   }
 }
