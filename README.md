@@ -1,18 +1,19 @@
-# @eagle/glob-loader
+# @lab009/glob-loader
+
+Forked from [seanchas116/glob-loader](https://github.com/seanchas116/glob-loader), changed:
+ - use fileName for object key
 
 webpack loader to load files at once with glob
 
 ## Install
 
 ```
-npm install --save-dev @eagle/glob-loader
+npm install --save-dev @lab009/glob-loader
 ```
 
 ## Repository
 
-Change: export object instead of an array
-
-https://github.com/Graf009/glob-loader.git
+https://github.com/lab009/glob-loader.git
 
 ## Use
 

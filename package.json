@@ -1,5 +1,5 @@
 {
-  "name": "@eagle/glob-loader",
+  "name": "@lab009/glob-loader",
   "version": "0.4.0",
   "description": "webpack loader to load files at once with glob",
   "main": "index.js",
@@ -12,9 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/seanchas116/glob-loader.git"
+    "url": "git+https://github.com/lab009/glob-loader.git"
   },
-  "author": "Ryohei Ikegami <iofg2100@gmail.com>",
+  "authors": [
+    "Ryohei Ikegami <iofg2100@gmail.com>",
+    "Oleg Orlov <mail@orlovoleg.com>"
+  ],
   "license": "MIT",
   "dependencies": {},
   "peerDependencies": {
